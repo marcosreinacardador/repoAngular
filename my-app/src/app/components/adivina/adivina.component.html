@@ -1,0 +1,7 @@
+<div>{{titulo}}  <!-- interpolación {{}}-->
+    <input class="m-2" type="number" [(ngModel)]="numusuario"> 
+    &nbsp;&nbsp;
+    <button class="btn btn-primary" (click)="comprobarIntento()"> Adivina </button>
+    &nbsp;&nbsp;
+    <button *ngIf="finpartida" class="btn btn-primary" (click)="iniciaJuego()"> Juega de nuevo </button>
+</div>
