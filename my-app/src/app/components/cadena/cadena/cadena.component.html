@@ -1,0 +1,17 @@
+<div>
+    <label for="userInput">Introduce una cadena:  &nbsp;</label>
+    <input type="text" placeholder="Introduce una cadena" id="userInput" [(ngModel)]="userInput" >
+    &nbsp;&nbsp;
+    <button class="btn btn-primary" (click)="convierteCadena()"> Convierte </button>
+    &nbsp;&nbsp;
+    <button *ngIf="otra" class="btn btn-primary" (click)="comienza()"> Otra!! </button>
+    
+    <div *ngIf="escribeResultado">
+        <div *ngIf="userInput">
+        <p>Cadena al revés: &nbsp;&nbsp;<i><b>{{ ponAlRevesCadena }}</b></i></p>
+        <p>Longitud de la cadena: &nbsp;&nbsp;<i><b>{{ longitudCadena }}</b></i></p>
+        <p *ngIf="esParOImpar()"><i><b>La longitud de la cadena es par.</b></i></p>
+        <p *ngIf="!esParOImpar()"><i><b>La longitud de la cadena es impar.</b></i></p>
+        </div>
+    </div>
+  </div>

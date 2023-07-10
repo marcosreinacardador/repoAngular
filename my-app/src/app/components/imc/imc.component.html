@@ -1,0 +1,19 @@
+<div>
+    <label for="userInput">Introduce tu peso:  &nbsp;</label>
+    <input type="text" placeholder="peso" id="userPeso" [(ngModel)]="userPeso" >
+    &nbsp;&nbsp;
+    <label for="userInput">y tu altura:  &nbsp;</label>
+    <input type="text" placeholder="altura" id="userAltura" [(ngModel)]="userAltura" >
+    &nbsp;&nbsp;
+    <button class="btn btn-primary" (click)="calculaTuImc()"> Calcula IMC </button>
+    <!--<button *ngIf="otra" class="btn btn-primary" (click)="comienza()"> Otra!! </button>
+    -->
+    <div *ngIf="muestrameResultado">
+        <div>
+        <p>Tu IMC es:  &nbsp;&nbsp;<i><b>{{ clasificacion }}</b></i></p>
+        <img [src]="'assets/imc/' + imagenH" alt="Imagen de clasificación">
+        <img [src]="'assets/imc/' + imagenM" alt="Imagen de clasificación">
+        </div>
+    </div>
+ 
+</div>
