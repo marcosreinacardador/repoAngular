@@ -5,6 +5,7 @@ import { PerroComponent } from './components/perro/perro.component';
 import { AdivinaComponent } from './components/adivina/adivina.component';
 import { CadenaComponent } from './components/cadena/cadena/cadena.component';
 import { ImcComponent } from './components/imc/imc.component';
+import { ChucknorrisComponent } from './components/chucknorris/chucknorris.component';
 
 
 // Array de rutas tengo que tener una ruta 
@@ -14,7 +15,8 @@ const routes: Routes = [
   {path:"perros", component: PerroComponent},
   {path:"adivina", component: AdivinaComponent},
   {path:"cadena", component: CadenaComponent},
-  {path:"imc", component: ImcComponent}
+  {path:"imc", component: ImcComponent},
+  {path:"chucknorris", component: ChucknorrisComponent}
 ];
 
 @NgModule({
