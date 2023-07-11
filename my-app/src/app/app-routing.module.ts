@@ -6,6 +6,7 @@ import { AdivinaComponent } from './components/adivina/adivina.component';
 import { CadenaComponent } from './components/cadena/cadena/cadena.component';
 import { ImcComponent } from './components/imc/imc.component';
 import { ChucknorrisComponent } from './components/chucknorris/chucknorris.component';
+import { RestaurantesComponent } from './components/restaurantes/restaurantes.component';
 
 
 // Array de rutas tengo que tener una ruta 
@@ -16,7 +17,8 @@ const routes: Routes = [
   {path:"adivina", component: AdivinaComponent},
   {path:"cadena", component: CadenaComponent},
   {path:"imc", component: ImcComponent},
-  {path:"chucknorris", component: ChucknorrisComponent}
+  {path:"chucknorris", component: ChucknorrisComponent},
+  {path:"restaurantes", component: RestaurantesComponent}
 ];
 
 @NgModule({
@@ -24,3 +26,5 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+
+

@@ -1,22 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { timestamp } from 'rxjs';
-
-@Component({
-  selector: 'app-adivina',
-  templateUrl: './adivina.component.html',
-  styleUrls: ['./adivina.component.css']
-})
-export class AdivinaComponent implements OnInit {
-
-  titulo:string;
-  numusuario:number;
-  numadivina:number = 0;
-  intentos:number;
-  horainicio:number;
-  tiempotranscurrido:number;
-  finpartida:boolean;
-
-  /*
+/*
     HACED UNA APP DONDE EL PROGRAMA PIENSE UN NÚMERO
     DEL 1 AL 100, 
     
@@ -32,6 +14,29 @@ export class AdivinaComponent implements OnInit {
     Y LA SOLUCIÓN
   */
   
+
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { CdTimerComponent, TimeInterface } from 'angular-cd-timer';
+
+import { timestamp } from 'rxjs';
+
+@Component({
+  selector: 'app-adivina',
+  templateUrl: './adivina.component.html',
+  styleUrls: ['./adivina.component.css']
+})
+export class AdivinaComponent implements OnInit {
+
+  titulo:string;            // titulo de la ventana
+  numusuario:number;        // numero introducido por el usuario
+  numadivina:number = 0;    // numero que tiene que adivinar
+  intentos:number;
+  horainicio:number;
+  tiempotranscurrido:number;
+  finpartida:boolean;
+
+  @ViewChild('basicTimer') contador !: CdTimerComponent;
+
   constructor() {
     console.log("estamos en el constructor");
     this.titulo = "Adivina un número en 5 intentos: ";
@@ -42,6 +47,8 @@ export class AdivinaComponent implements OnInit {
     this.horainicio = Date.now();
     this.tiempotranscurrido = 0;
     console.log('numero a adivinar ${this.numadivina} por el usuario');
+
+    
     //TODO:calcular el numero a adivinar
   }
   ngOnInit(): void {  // Se inicia el ciclo de vida o evento
@@ -83,13 +90,17 @@ export class AdivinaComponent implements OnInit {
         this.tiempotranscurrido = Date.now() - this.horainicio;
         window.alert(`Lo siento, has agotado el número de intentos, el numero era ${this.numadivina} tiempo: ${this.formatearTiempo(this.tiempotranscurrido)}`);
       } else if (this.numusuario < this.numadivina){        
-        window.alert(`Ohhh! caliente caliente, ${this.numusuario} es menor que el tienes que adivinar.`);
+        window.alert(`Ohhh! caliente caliente, tú número  ${this.numusuario} es menor.` );
         this.intentos--;
       } else {
-        window.alert(` Ohhh! frio frio, ${this.numusuario} es mayor que el tienes que adivinar.`);
+        window.alert(` Ohhh! frio frio, tú número  ${this.numusuario} es mayor.`);
         this.intentos--;
       } 
-        
+       if(this.finpartida){
+          let ti:TimeInterface =  this.contador.get();
+          console.log("Has tardado " + ti.minutes + ":" + ti.seconds);  
+          this.contador.stop();
+        }    
       }
     
 
