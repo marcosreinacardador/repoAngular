@@ -7,6 +7,7 @@ import { CadenaComponent } from './components/cadena/cadena/cadena.component';
 import { ImcComponent } from './components/imc/imc.component';
 import { ChucknorrisComponent } from './components/chucknorris/chucknorris.component';
 import { RestaurantesComponent } from './components/restaurantes/restaurantes.component';
+import { FormularioRestauranteComponent } from './components/formulario-restaurante/formulario-restaurante.component';
 
 
 // Array de rutas tengo que tener una ruta 
@@ -18,7 +19,8 @@ const routes: Routes = [
   {path:"cadena", component: CadenaComponent},
   {path:"imc", component: ImcComponent},
   {path:"chucknorris", component: ChucknorrisComponent},
-  {path:"restaurantes", component: RestaurantesComponent}
+  {path:"restaurantes", component: RestaurantesComponent},
+  {path:"restaurantes/nuevo", component: FormularioRestauranteComponent}
 ];
 
 @NgModule({

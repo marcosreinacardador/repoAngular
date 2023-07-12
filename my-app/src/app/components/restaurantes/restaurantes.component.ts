@@ -11,8 +11,6 @@ import { RestauranteService } from 'src/app/services/restaurante.service';
 export class RestaurantesComponent implements OnInit{
 
   lista_restaurantes = Array<Restaurante>();
-  opcion:boolean = false;
-  
 
   constructor(private restauranteService:RestauranteService){ 
     this.lista_restaurantes = new Array<Restaurante>;
@@ -51,10 +49,10 @@ export class RestaurantesComponent implements OnInit{
       }
     )}
     */
+  }
+  borrarRestaurante(){
+    console.log("Borrando el restaurante");
+  }
   
-  }
-  comienza(){
-    this.opcion = true;
-  }
 
 }

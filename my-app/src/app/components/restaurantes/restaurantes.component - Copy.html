@@ -1,0 +1,27 @@
+
+
+
+<button class="btn btn-success" routerLink="/restaurantes/nuevo">CREAR</button>
+    <p></p>
+    <p></p>
+
+<div class="card-group">
+    <div *ngFor="let listaR of lista_restaurantes" class="card">
+      <img class="card-img-top" src="../assets/imgrest.jpeg" align="center" width="25" height="150"  alt="Card image cap">
+      <div class="card-body">
+        <p class="card-text"><b>Restaurante {{listaR.nombre }}</b></p>
+        <p class="card-text">Barrio {{listaR.barrio}}</p>
+        <p class="card-text"><i>{{listaR.direccion}}</i></p> 
+        <p class="card-text">Web: <a href="">{{listaR.web}}</a></p>
+        <p class="card-text">Especialidades de la casa:
+            <i>{{listaR.especialidad1}}, {{listaR.especialidad2}}, {{listaR.especialidad3}}</i></p>
+        <p class="card-text">
+            <img align="center" width="25" height="25" src="../assets/google.jpeg">
+            <small class="text-muted"> <a href="">{{listaR.fichaGoogle}}</a>
+            Coordenadas: {{listaR.latitud}}, {{listaR.longitud}}</small></p>
+        <p class="card-text">
+            <button class="btn btn-primary" (click)="borrarRestaurante()">Borrar Restaurante</button>
+        </p>
+    </div>  
+    
+</div>
